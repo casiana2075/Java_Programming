@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example","l":"Client"},{"p":"org.example","l":"ClientType"},{"p":"org.example","l":"Depot"},{"p":"org.example","l":"Drone"},{"p":"org.example","l":"Main"},{"p":"org.example","l":"Problem"},{"p":"org.example","l":"Truck"},{"p":"org.example","l":"Vehicle"}];updateSearchResults();
