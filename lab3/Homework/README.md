@@ -20,12 +20,12 @@ Trip info :\
 ]\
 \
 Free visitable locations:\
-[1].David StatueTimetable for David Statue:\
+[1]Timetable for David Statue:\
 Day: SUNDAY, interval: 10:00 - 16:00\
-[2].East ChurchTimetable for East Church:\
+[2]Timetable for East Church:\
 Day: WEDNESDAY, interval: 09:00 - 12:00\
 Day: MONDAY, interval: 14:00 - 18:00\
-[3].Three Crossroads ChurchTimetable for Three Crossroads Church:\
+[3]Timetable for Three Crossroads Church:\
 Day: WEDNESDAY, interval: 09:00 - 12:00\
 Day: MONDAY, interval: 14:00 - 18:00\
 \
