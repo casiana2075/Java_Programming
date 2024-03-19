@@ -40,7 +40,7 @@ public class Trip implements Payable{
         int n = 0;
         for (Attraction attraction : freeVisitableLocations) {
             n++;
-            System.out.printf("[%s].%s", Integer.toString(n), attraction.getName());
+            System.out.printf("[%s].", Integer.toString(n));
             attraction.getTimetable();
         }
     }
