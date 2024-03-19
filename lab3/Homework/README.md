@@ -63,3 +63,5 @@ On 2024-03-17, visit David Statue\
 On 2024-03-20, visit Three Crossroads Church\
 On 2024-03-18, visit East Church\
 On 2024-03-18, visit Electric Castle\
+
+# All dots resolved
