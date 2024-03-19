@@ -23,19 +23,11 @@ Free visitable locations:\
 [1]Timetable for David Statue:\
 Day: SUNDAY, interval: 10:00 - 16:00\
 [2]Timetable for East Church:\
-Day: THURSDAY, interval: 14:00 - 18:00\
 Day: WEDNESDAY, interval: 09:00 - 12:00\
 Day: MONDAY, interval: 14:00 - 18:00\
 [3]Timetable for Three Crossroads Church:\
-Day: THURSDAY, interval: 12:30 - 17:30\
-Day: WEDNESDAY, interval: 11:00 - 15:00\
-Day: MONDAY, interval: 12:30 - 17:30\
-\
-Travel Plan:\
-On 2024-03-17, visit David Statue\
-On 2024-03-20, visit Three Crossroads Church\
-On 2024-03-18, visit East Church\
-On 2024-03-18, visit Electric Castle\
+Day: WEDNESDAY, interval: 09:00 - 12:00\
+Day: MONDAY, interval: 14:00 - 18:00\
 \
 Travel Plan:\
 On 2024-03-17, visit David Statue\
