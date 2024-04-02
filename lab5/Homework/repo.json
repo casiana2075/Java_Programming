@@ -1,0 +1,41 @@
+{
+    "directory": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository",
+    "documents": {
+        "Person[id=111, name=Employee1]": [
+            {
+                "id": 0,
+                "name": "image.jpg",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee1_111\\image.jpg"
+            },
+            {
+                "id": 1,
+                "name": "info.txt",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee1_111\\info.txt"
+            }
+        ],
+        "Person[id=112, name=Employee2]": [
+            {
+                "id": 2,
+                "name": "info.txt",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee2_112\\info.txt"
+            },
+            {
+                "id": 3,
+                "name": "test.cpp",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee2_112\\test.cpp"
+            }
+        ],
+        "Person[id=113, name=Employee3]": [
+            {
+                "id": 4,
+                "name": "document.pdf",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee3_113\\document.pdf"
+            },
+            {
+                "id": 5,
+                "name": "info.txt",
+                "path": "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository\\Employee3_113\\info.txt"
+            }
+        ]
+    }
+}
