@@ -11,26 +11,6 @@ public class Main {
         app.commandHandler();            
     }
 
-    // private void testRepo() {
-
-    //     String masterDirectory = new String("C:\\Users\\alinm\\Desktop\\java_course_fii_2024\\lab5\\homework");
-
-    //     var repo = new Repository(masterDirectory);
-    //     var service = new RepositoryService();
-    //     System.out.println("Contents of '" + masterDirectory + "':");
-    //     service.print(repo);
-
-    //     try {
-    //         service.export(repo, "C:\\Users\\alinm\\Desktop\\java_course_fii_2024\\lab5\\homework\\repository.json");
-    //     } catch (Exception ex) {
-    //         System.err.println("Error at exporting the repository" + ex);
-    //     }
-
-    //     var doc = repo.findDocument(4);
-    //     // service.view(doc.get());
-    //     // service.generateTemplate(repo);
-    // }
-
     private void commandHandler() {
         String masterDirectory = "E:\\Facultate\\an2\\sem2\\Java\\lab5\\Homework5\\Repository";
         var repo = new Repository(masterDirectory);
