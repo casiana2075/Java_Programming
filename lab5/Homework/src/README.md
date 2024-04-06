@@ -35,5 +35,5 @@
 
         Enter your command:
 
-# all dotes resolved
+# all dots resolved
 
