@@ -40,7 +40,7 @@
     
     Process finished with exit code 0
 
-# output example for TimeKeeper(just a pice of code where the program stops)
+# output example for TimeKeeper(just a pice of ooutput where the program stops)
 
     *Tile from 1 to 1000 has been added to the game.*
     ...
