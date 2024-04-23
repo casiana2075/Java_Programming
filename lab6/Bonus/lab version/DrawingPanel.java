@@ -23,7 +23,7 @@ public class DrawingPanel extends JPanel {
     private int lastRow = -1, lastCol = -1; //last cell that was clicked
     private boolean gameOver = false; // ending the game
     private boolean isAIEnabled = false; // flag for AI
-    private int aiPlayer = 2; // assume AI is blue
+    private int aiPlayer = 1; // assume AI is blue
 
 
     public DrawingPanel(MFrame frame) {
@@ -33,7 +33,7 @@ public class DrawingPanel extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (gameOver) {
+                if(gameOver){
                     return;
                 }
                 int row = e.getY() / cellSize;
@@ -60,7 +60,8 @@ public class DrawingPanel extends JPanel {
                     gameOver = true;
                 }
                 if (isAIEnabled && currentPlayer == aiPlayer) {
-                    enableAI(true); // Let the AI make a move
+                    // Let the AI make a move
+                    enableAI(true);
                 }
             }
         });
@@ -80,6 +81,37 @@ public class DrawingPanel extends JPanel {
         offscreen.setColor(Color.WHITE);
         offscreen.fillRect(0, 0, getWidth(), getHeight());
         createRandomSticks();
+
+        // Check if AI is enabled and it's the AI's turn to move
+        if (isAIEnabled && currentPlayer == aiPlayer) {
+            makeAIMove();
+        }
+
+    }
+
+    private void selectRandomNodeForInitialPlacement() {
+        // find all available nodes for initial stone placement
+        ArrayList<Point> availableNodes = new ArrayList<>();
+        for (int row = 0; row < gridRows; row++) {
+            for (int col = 0; col < gridColumns; col++) {
+                if (isValidMove(row, col)) {
+                    availableNodes.add(new Point(row, col));
+                }
+            }
+        }
+
+        // randomly select one of the available nodes
+        if (!availableNodes.isEmpty()) {
+            Point randomNode = availableNodes.get(new Random().nextInt(availableNodes.size()));
+            int row = randomNode.x;
+            int col = randomNode.y;
+            gameState[row][col] = currentPlayer;
+            lastRow = row;
+            lastCol = col;
+        }else{
+            // no available nodes, end the game
+            gameOver = true;
+        }
     }
 
 
@@ -105,8 +137,8 @@ public class DrawingPanel extends JPanel {
     private void drawGrid() {
         offscreen.setColor(Color.GRAY);
         int offset = 20;
-        for (int row = 0; row < gridRows - 1; row++) {
-            for (int col = 0; col < gridColumns - 1; col++) {
+        for (int row = 0; row < gridRows-1; row++) {
+            for (int col = 0; col < gridColumns-1; col++) {
                 int x = col * cellSize + offset;
                 int y = row * cellSize + offset;
                 offscreen.drawRect(x, y, cellSize, cellSize);
@@ -130,8 +162,8 @@ public class DrawingPanel extends JPanel {
         Random random = new Random();
         int stickProbability = 86;
 
-        for (int row = 0; row < gridRows - 1; row++) {
-            for (int col = 0; col < gridColumns - 1; col++) {
+        for (int row = 0; row < gridRows-1; row++) {
+            for (int col = 0; col < gridColumns-1; col++) {
                 // connect circles horizontally with a probability
                 if (random.nextInt(100) < stickProbability) {
                     sticks[row][col] = true;
@@ -295,24 +327,59 @@ public class DrawingPanel extends JPanel {
 
     public void enableAI(boolean enable) {
         isAIEnabled = enable;
-        if (isAIEnabled) {
+        if (isAIEnabled && currentPlayer == aiPlayer) {
             // AI's turn, make a move
-            int[] aiMove = AI.findBestMove(gameState, sticks, aiPlayer, lastRow, lastCol);
-            if (aiMove[0] != -1 && aiMove[1] != -1) {
-                // Check if the move is valid according to the game rules
-                if (AI.isValidMove(aiMove[0], aiMove[1], gameState, sticks, lastRow, lastCol)) {
-                    gameState[aiMove[0]][aiMove[1]] = aiPlayer;
-                    currentPlayer = 3 - aiPlayer;
-                    lastRow = aiMove[0];
-                    lastCol = aiMove[1];
-                    // Check if AI wins after making the move
-                    if (!AI.hasPerfectMatching(gameState, aiPlayer)) {
-                        System.out.println("AI: I already won because I didn't found a perfect matching set in here! Hahaha!!");
-                    }
-                    repaint();
+            makeAIMove();
+        }
+    }
+
+    private void makeAIMove() {
+        // Find available nodes for AI move
+        ArrayList<Point> availableNodes = new ArrayList<>();
+        for (int row = 0; row < gridRows; row++) {
+            for (int col = 0; col < gridColumns; col++) {
+                if (isValidMove(row, col)) {
+                    availableNodes.add(new Point(row, col));
                 }
             }
         }
+
+        // If no available nodes, end the game
+        if (availableNodes.isEmpty()) {
+            gameOver = true;
+            return;
+        }
+
+        // If it's the first move, randomly select one of the available nodes for AI move
+        if (lastRow == -1 && lastCol == -1) {
+            Point randomNode = availableNodes.get(new Random().nextInt(availableNodes.size()));
+            makeMove(randomNode.x, randomNode.y);
+            return;
+        }
+
+        // For subsequent moves, choose the first move that doesn't have a perfect matching
+        for (Point node : availableNodes) {
+            int row = node.x;
+            int col = node.y;
+            gameState[row][col] = aiPlayer;
+            if (!AI.hasPerfectMatching(gameState, sticks, aiPlayer)) {
+                makeMove(row, col);
+                return;
+            }
+            gameState[row][col] = 0;  // undo the move
+        }
+
+        // If all moves have a perfect matching, make the last available move
+        Point lastNode = availableNodes.get(availableNodes.size() - 1);
+        makeMove(lastNode.x, lastNode.y);
+    }
+
+    private void makeMove(int row, int col) {
+        gameState[row][col] = aiPlayer;
+        currentPlayer = 3 - aiPlayer;
+        lastRow = row;
+        lastCol = col;
+        repaint();
     }
 
 }

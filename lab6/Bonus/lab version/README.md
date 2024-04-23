@@ -1,1 +1,2 @@
 # all dots resolved
+    The ai makes the first move randomly and then search for all valid moves and choos the first one that doesn have a perfect match in the formed graph(unselected and reacheable stone places with the sticks that connect them). if he doesn't find any graph withouth a perfect match the he will choose the last option as a move. 
