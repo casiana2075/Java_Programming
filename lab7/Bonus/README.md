@@ -12,7 +12,7 @@
     Player 1 picked tile (3, 4).
     Player 2 picked tile (1, 4).
     Player 3 picked tile (4, 1).
-    The winner is Player 2 with a score of 4
+    The winner is Player 1 with a score of 4
     Player 1's longest sequence (length 4):
     1 2 3 4 2
     Player 1's graph does not satisfy Ore's condition.
