@@ -1,4 +1,4 @@
-#output
+# output
 
     Hibernate: insert into publishers (name) values (?)
     Hibernate: insert into books (publisher_id, title) values (?, ?)
@@ -30,4 +30,4 @@
 
     Process finished with exit code 0 
 
-#all dots resolved
+# all dots resolved
