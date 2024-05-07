@@ -8,3 +8,5 @@
     Author{id=1, name='Robert Greene'}
 
     Process finished with exit code 0
+
+#all dots resolved
