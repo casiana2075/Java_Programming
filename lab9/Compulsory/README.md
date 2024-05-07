@@ -1,4 +1,4 @@
-#output
+# output
 
     Hibernate: insert into authors (name) values (?)
     Author 'Mark Twain' was created.
@@ -9,4 +9,4 @@
 
     Process finished with exit code 0
 
-#all dots resolved
+# all dots resolved
