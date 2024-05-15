@@ -14,20 +14,32 @@
     Author 'Charles Dickens' was created.
     Hibernate: insert into author_book (author_id, book_id) values (?, ?)
     Hibernate: select a1_0.id,a1_0.name from authors a1_0 where a1_0.id=?
-    Author{id=80, name='Mark Twain'}
+    Author: id=98, name='Mark Twain'}
     Hibernate: select a1_0.id,a1_0.name from authors a1_0 where a1_0.id=?
-    Author{id=81, name='Charles Dickens'}
-    Book :The Adventures of Tom Sawyer'
-    Book :A Tale of Two Cities'
-    Publisher :name='Penguin Books'
-
-    May 07, 2024 9:28:53 PM org.example.AbstractRepository find
+    Author: id=99, name='Charles Dickens'}
+    Book: The Adventures of Tom Sawyer'
+    Book: A Tale of Two Cities'
+    Publisher name: 'Penguin Books'
+    
+    Hibernate: update books set publisher_id=?, title=? where id=?
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
+    INFO: Execution time of find query: 1ms
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
+    INFO: Execution time of find query: 1ms
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
     INFO: Execution time of find query: 0ms
-    May 07, 2024 9:28:53 PM org.example.AbstractRepository find
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
     INFO: Execution time of find query: 0ms
-    May 07, 2024 9:28:53 PM org.example.AbstractRepository find
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
     INFO: Execution time of find query: 0ms
-
-    Process finished with exit code 0 
+    May 15, 2024 8:55:53 AM org.example.AbstractRepository find
+    INFO: Execution time of find query: 0ms
+    Hibernate: delete from author_book where author_id=?
+    Hibernate: delete from authors where id=?
+    Hibernate: select a1_0.id,a1_0.name from authors a1_0 where a1_0.id=?
+    Author: id=98, name='Mark Twain'}
+    Book: The Adventures of Finn & Jake'
+    Book: A Tale of Two Cities'
+    Publisher name: 'Penguin Books'
 
 # all dots resolved
