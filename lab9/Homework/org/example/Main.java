@@ -44,7 +44,6 @@ public class Main {
         publisherBooks.add(book2);
         publisher.setBooks(publisherBooks);
 
-        // Persist entities
         // persist entities
         publisherRepo.save(publisher);
         bookRepo.save(bookRepo.getEntityManager().merge(book1));
