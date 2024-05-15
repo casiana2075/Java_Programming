@@ -32,6 +32,32 @@ public abstract class AbstractRepository<T> {
     }
 
     public T save(T entity) {
+    //added update delete
+    public void merge(T entity) {
+        try {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().commit();
+            }
+            em.getTransaction().begin();
+            em.merge(entity);
+            em.getTransaction().commit();
+        } catch (PersistenceException e) {
+            LOGGER.severe("Error updating entity: " + e.getMessage());
+        }
+    }
+    public void delete(T entity) {
+        try {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().commit();
+            }
+            em.getTransaction().begin();
+            em.remove(entity);
+            em.getTransaction().commit();
+        } catch (PersistenceException e) {
+            LOGGER.severe("Error deleting entity: " + e.getMessage());
+        }
+    }
+    public void save(T entity) {
         try {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().commit();
@@ -42,7 +68,6 @@ public abstract class AbstractRepository<T> {
         } catch (PersistenceException e) {
             LOGGER.severe("Error saving entity: " + e.getMessage());
         }
-        return entity;
     }
 
     public T find(Object id) {

@@ -45,6 +45,7 @@ public class Main {
         publisher.setBooks(publisherBooks);
 
         // Persist entities
+        // persist entities
         publisherRepo.save(publisher);
         bookRepo.save(bookRepo.getEntityManager().merge(book1));
         bookRepo.save(bookRepo.getEntityManager().merge(book2));
@@ -55,6 +56,19 @@ public class Main {
         System.out.println(authorRepo.findById(author1.getId()));
         System.out.println(authorRepo.findById(author2.getId()));
         System.out.println(bookRepo.find(book1.getId()));
+        System.out.println(bookRepo.find(book2.getId()));
+        System.out.println(publisherRepo.find(publisher.getId()));
+
+        // update
+        book1.setTitle("The Adventures of Finn & Jake");
+        bookRepo.merge(book1);
+
+        // delete
+        authorRepo.delete(author2);
+
+        System.out.println(authorRepo.findById(author1.getId()));
+        //System.out.println(authorRepo.findById(author2.getId())); // return null
+        System.out.println(bookRepo.find(book1.getId())); //return the updated book
         System.out.println(bookRepo.find(book2.getId()));
         System.out.println(publisherRepo.find(publisher.getId()));
     }

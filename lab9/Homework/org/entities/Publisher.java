@@ -29,7 +29,7 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return "Publisher :" +
-                "name='" + name + '\'' + "\n";
+        return "Publisher name: "+
+                "'" + name + '\'' + "\n";
     }
 }
