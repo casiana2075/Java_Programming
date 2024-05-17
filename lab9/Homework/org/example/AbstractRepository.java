@@ -31,7 +31,6 @@ public abstract class AbstractRepository<T> {
         this.entityClass = entityClass;
     }
 
-    public T save(T entity) {
     //added update delete
     public void merge(T entity) {
         try {

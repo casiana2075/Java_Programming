@@ -7,5 +7,4 @@ public class PublisherRepository extends AbstractRepository<Publisher> {
     public PublisherRepository() {
         super(Publisher.class);
     }
-    // Implement Publisher-specific methods here
 }
