@@ -44,6 +44,7 @@ public abstract class AbstractRepository<T> {
             LOGGER.severe("Error updating entity: " + e.getMessage());
         }
     }
+    
     public void delete(T entity) {
         try {
             if (em.getTransaction().isActive()) {
@@ -56,6 +57,7 @@ public abstract class AbstractRepository<T> {
             LOGGER.severe("Error deleting entity: " + e.getMessage());
         }
     }
+    
     public void save(T entity) {
         try {
             if (em.getTransaction().isActive()) {
@@ -68,7 +70,7 @@ public abstract class AbstractRepository<T> {
             LOGGER.severe("Error saving entity: " + e.getMessage());
         }
     }
-
+    
     public T find(Object id) {
         T result = null;
         try {
