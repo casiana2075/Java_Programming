@@ -1,5 +1,7 @@
 # output & screenshot from Postman
 
+    # output & screenshot from Postman
+
 
     .   ____          _            __ _ _
     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -47,5 +49,7 @@
     2024-05-24T16:40:20.518+03:00  INFO 21984 --- [Laborator11] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
     2024-05-24T16:40:20.521+03:00  INFO 21984 --- [Laborator11] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
     
+
+# all dots resolved
 
 # all dots resolved
